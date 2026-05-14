@@ -14,6 +14,13 @@ import {
   Signup,
   UserLayout,
 } from '@/Index';
+import InstitutionLayout from '@/layouts/InstitutionLayout';
+
+import AddGame from '@/pages/institution/AddGame';
+
+import InstitutionDashboard from '@/pages/institution/InstitutionDashboard';
+
+import ManageGames from '@/pages/institution/ManageGames';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -24,7 +31,6 @@ const AppRoutes = () => {
         {/* ========================================= */}
         {/* PUBLIC ROUTES */}
         {/* ========================================= */}
-
         <Route element={<PublicLayout />}>
           <Route path="/" element={<Home />} />
 
@@ -41,11 +47,9 @@ const AppRoutes = () => {
 
           <Route path="/contact" element={<Contact />} />
         </Route>
-
         {/* ========================================= */}
         {/* USER ROUTES */}
         {/* ========================================= */}
-
         <Route element={<UserLayout />}>
           <Route path="/user/dashboard" element={<Dashboard />} />
 
@@ -58,6 +62,18 @@ const AppRoutes = () => {
 
           {/* PAYMENT SUCCESS */}
           <Route path="/payment-success" element={<PaymentSuccess />} />
+        </Route>
+        /* ========================================= */ /* INSTITUTION ROUTES */
+        /* ========================================= */
+        <Route element={<InstitutionLayout />}>
+          <Route
+            path="/institution/dashboard"
+            element={<InstitutionDashboard />}
+          />
+
+          <Route path="/institution/add-game" element={<AddGame />} />
+
+          <Route path="/institution/manage-games" element={<ManageGames />} />
         </Route>
       </Routes>
     </BrowserRouter>

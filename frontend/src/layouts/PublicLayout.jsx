@@ -1,17 +1,21 @@
-import { Footer, PublicNavbar } from '@/Index';
-import React from 'react'
+// ==========================================
+// FILE: src/layouts/PublicLayout.jsx
+// ==========================================
+
+import Navbar from '@/components/navbar/Navbar';
+
 import { Outlet } from 'react-router-dom';
 
 const PublicLayout = () => {
   return (
-    <div className='min-h-screen bg-[#F7F4FF]'>
-      <PublicNavbar />
+    <div>
+      {/* NAVBAR */}
+      <Navbar />
 
+      {/* PAGE CONTENT */}
       <Outlet />
-
-      <Footer />
     </div>
   );
-}
+};
 
-export default PublicLayout
+export default PublicLayout;
